@@ -6,7 +6,7 @@ import type { PropertyCard as PropertyCardData } from "@/lib/properties";
 export function PropertyCard({ property }: { property: PropertyCardData }) {
   return (
     <Link
-      href={`/properties?code=${property.code}`}
+      href={`/property-${property.code}`}
       className="group flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-md transition-all hover:-translate-y-2 hover:shadow-xl"
     >
       <div className="relative h-56 w-full overflow-hidden bg-zinc-100">
@@ -14,6 +14,7 @@ export function PropertyCard({ property }: { property: PropertyCardData }) {
           src={property.image ?? "/property-img.jpg"}
           alt={property.name}
           fill
+          unoptimized={property.image != null}
           className="object-cover transition-transform duration-300 group-hover:scale-110"
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
         />

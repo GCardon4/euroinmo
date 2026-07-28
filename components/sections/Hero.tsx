@@ -82,7 +82,14 @@ export function Hero({
           className="absolute inset-0 transition-opacity duration-1000"
           style={{ opacity: currentSlide === index ? 1 : 0 }}
         >
-          <Image src={src} alt="" fill priority={index === 0} className="object-cover" />
+          <Image
+            src={src}
+            alt=""
+            fill
+            priority={index === 0}
+            unoptimized={!src.startsWith("/")}
+            className="object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-br from-brand/85 to-brand-light/75" />
         </div>
       ))}

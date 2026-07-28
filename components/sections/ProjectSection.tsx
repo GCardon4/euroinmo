@@ -38,6 +38,7 @@ export function ProjectSection({ project }: { project: Project }) {
               src={images[0]}
               alt={project.name}
               fill
+              unoptimized
               className="cursor-pointer object-cover transition-transform hover:scale-105"
               sizes="(min-width: 1024px) 50vw, 100vw"
               onClick={() => {
@@ -120,7 +121,7 @@ export function ProjectSection({ project }: { project: Project }) {
             </button>
 
             <div className="relative flex-1 overflow-hidden rounded-xl bg-black" style={{ minHeight: "50vh" }}>
-              <Image src={images[index]} alt={project.name} fill className="object-contain" />
+              <Image src={images[index]} alt={project.name} fill unoptimized className="object-contain" />
               <span className="absolute left-4 top-4 rounded-lg bg-black/60 px-3 py-1 text-sm font-medium text-white">
                 {index + 1} / {images.length}
               </span>
@@ -154,7 +155,7 @@ export function ProjectSection({ project }: { project: Project }) {
                       i === index ? "border-brand" : "border-transparent"
                     }`}
                   >
-                    <Image src={src} alt="" fill className="object-cover" />
+                    <Image src={src} alt="" fill unoptimized className="object-cover" />
                   </button>
                 ))}
               </div>
