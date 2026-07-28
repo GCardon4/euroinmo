@@ -2,64 +2,53 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <div className="flex flex-col flex-1">
+      <header className="flex items-center justify-between px-6 py-4 sm:px-12">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src="/logotipo-euro.svg"
+          alt="Euro Inmobiliaria"
+          width={140}
+          height={117}
           priority
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+        <a
+          href="https://wa.me/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 rounded-full bg-[#076081] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#054d68]"
+        >
+          Contáctanos
+        </a>
+      </header>
+
+      <main className="relative flex flex-1 items-center overflow-hidden">
+        <Image
+          src="/fachada-euro.jpg"
+          alt="Fachada de Euro Inmobiliaria"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/20" />
+
+        <div className="relative z-10 mx-6 max-w-2xl py-24 text-white sm:mx-12">
+          <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">
+            Experiencia, respaldo y resultados en cada negocio
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="mt-6 text-lg italic text-white/90 sm:text-xl">
+            Invertir bien no es cuestión de suerte, es cuestión de asesoría
+          </p>
+          <p className="mt-4 max-w-lg text-base text-white/80 sm:text-lg">
+            Empresa inmobiliaria con 14 años de experiencia, acompañando
+            familias por sus sueños.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
       </main>
+
+      <footer className="bg-[#076081] px-6 py-6 text-center text-sm text-white/80 sm:px-12">
+        © {new Date().getFullYear()} Euro Inmobiliaria. Todos los derechos
+        reservados.
+      </footer>
     </div>
   );
 }
