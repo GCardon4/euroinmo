@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   description: "Explora todas nuestras propiedades disponibles en el Oriente Antioqueño.",
 };
 
+export const dynamic = "force-dynamic";
+
 const PAGE_SIZE = 12;
 
 function toQueryString(params: Record<string, string | undefined>) {

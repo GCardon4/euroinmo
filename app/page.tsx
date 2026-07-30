@@ -14,7 +14,7 @@ import {
   getPropertyStats,
 } from "@/lib/properties";
 
-export const revalidate = 300;
+export const dynamic = "force-dynamic";
 
 export default async function Home() {
   const [featuredProperties, project, stats, categories, cities] = await Promise.all([

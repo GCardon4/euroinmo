@@ -5,6 +5,8 @@ import { ShareWhatsAppButton } from "@/components/ShareWhatsAppButton";
 import { formatPrice } from "@/lib/format";
 import { getPropertyByCode } from "@/lib/properties";
 
+export const dynamic = "force-dynamic";
+
 const WHATSAPP_ARRIENDOS = "573236536666";
 const WHATSAPP_VENTAS = "573507776633";
 

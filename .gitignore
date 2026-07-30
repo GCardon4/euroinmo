@@ -23,6 +23,9 @@
 #Ideas Bases
 /ideas
 
+#logs de despliegues
+/logs
+
 # misc
 .DS_Store
 *.pem
