@@ -13,7 +13,7 @@ const AGENTS = [
   },
   {
     photo: "/asesores/asesor-02.jpg",
-    name: "Alejandra Vergara",
+    name: "Diana Munera",
     role: "Asesora Comercial",
     properties: 38,
     rating: "4.8",
