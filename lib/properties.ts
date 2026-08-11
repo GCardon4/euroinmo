@@ -12,6 +12,7 @@ export type PropertyCard = {
   city: string | null;
   status: string | null;
   image: string | null;
+  amenities: string[];
 };
 
 type PropertyRow = {
@@ -103,13 +104,27 @@ async function attachImages(
   if (data.length === 0) return [];
 
   const ids = data.map((property) => property.id);
-  const { data: images } = await supabase
-    .from("properties_images")
-    .select("property_id, url_image")
-    .in("property_id", ids)
-    .eq("main", true);
+  const [{ data: images }, { data: amenityRows }] = await Promise.all([
+    supabase
+      .from("properties_images")
+      .select("property_id, url_image")
+      .in("property_id", ids)
+      .eq("main", true),
+    supabase
+      .from("property_amenities")
+      .select("property_id, amenities!inner(name)")
+      .in("property_id", ids),
+  ]);
 
   const imageByPropertyId = new Map(images?.map((img) => [img.property_id, img.url_image]));
+  const amenitiesByPropertyId = new Map<number, string[]>();
+  amenityRows?.forEach((row: any) => {
+    const id = row.property_id;
+    if (!amenitiesByPropertyId.has(id)) {
+      amenitiesByPropertyId.set(id, []);
+    }
+    amenitiesByPropertyId.get(id)?.push(row.amenities.name);
+  });
 
   return data.map((property) => ({
     id: property.id,
@@ -123,6 +138,7 @@ async function attachImages(
     city: property.city?.name ?? null,
     status: property.status?.name ?? null,
     image: imageByPropertyId.get(property.id) ?? null,
+    amenities: amenitiesByPropertyId.get(property.id) ?? [],
   }));
 }
 
