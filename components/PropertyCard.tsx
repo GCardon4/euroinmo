@@ -122,16 +122,18 @@ export function PropertyCard({ property }: { property: PropertyCardData }) {
           href={whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 rounded-lg px-3 py-2 transition-transform hover:scale-105 active:scale-95"
+          className="flex items-center justify-center rounded-lg bg-brand px-3 py-2 transition-all hover:bg-brand-dark active:scale-95"
           title="Compartir por WhatsApp"
         >
-          <Image
-            src="/whatsapp-button.png"
-            alt="Compartir por WhatsApp"
-            width={20}
-            height={20}
-            className="sm:w-[24px] sm:h-[24px]"
-          />
+          <div className="flex h-5 w-5 items-center justify-center rounded-full sm:h-6 sm:w-6">
+            <Image
+              src="/white-whatsapp.png"
+              alt="Compartir por WhatsApp"
+              width={20}
+              height={20}
+              className="h-full w-full"
+            />
+          </div>
         </a>
       </div>
     </div>
