@@ -42,7 +42,7 @@ export function PropertyCard({ property }: { property: PropertyCardData }) {
         </div>
 
         <div className="flex flex-1 flex-col gap-2.5 p-4 sm:gap-3 sm:p-6">
-          <h3 className="line-clamp-2 min-h-[2.5rem] text-base font-bold leading-tight text-zinc-900 sm:text-lg sm:min-h-[3.5rem]">
+          <h3 className="line-clamp-2 overflow-hidden text-base font-bold leading-tight text-zinc-900 sm:text-lg" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
             {property.name}
           </h3>
 
